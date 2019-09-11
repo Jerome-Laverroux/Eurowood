@@ -1,4 +1,6 @@
 # Eurowood
+QT/QML project
+
 calculation of wood structures
 2019 LAVERROUX Jerome, SIMON Antoine
 
@@ -13,3 +15,5 @@ Ce logiciel contient:
 - Une librairie RDM
 - un module de calcul de poutre isostatiques(2 appuis) ET hyperstatiques(3 appuis et plus)
 - des petits modules pour la vérification de certains assemblages bois/bois bois/acier
+
+Utiliser QtCreator pour compiler le projet

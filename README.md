@@ -16,4 +16,5 @@ Ce logiciel contient:
 - un module de calcul de poutre isostatiques(2 appuis) ET hyperstatiques(3 appuis et plus)
 - des petits modules pour la vérification de certains assemblages bois/bois bois/acier
 
-Utiliser QtCreator pour compiler le projet
+Utiliser QtCreator pour compiler le projet.
+Copier le fichier base.bd dans votre de dossier release, désolé , la copie n'est pas faite au moment de la compilation

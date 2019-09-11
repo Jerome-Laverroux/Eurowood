@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/c.png</file>
+        <file>Images/d.png</file>
+        <file>Images/e.png</file>
+        <file>Images/f.png</file>
+        <file>Images/appui_continu.png</file>
+        <file>Images/appui_discret.png</file>
+        <file>Images/rupture_traction.png</file>
+        <file>Images/entaille_basse.png</file>
+        <file>Images/entaille_haute.png</file>
+        <file>Images/lef.jpg</file>
+        <file>Images/plat_flexion.jpg</file>
+        <file>Images/plat_perce.jpg</file>
+        <file>Images/cordon_frontal.jpg</file>
+        <file>Images/cordon_lateral.jpg</file>
+        <file>Images/cordon_oblique.jpg</file>
+        <file>accueil.qml</file>
+        <file>accessoires/Reglage_defaut.qml</file>
+        <file>accessoires/Ligne_Champs.qml</file>
+        <file>boites/Caracteristiques.qml</file>
+        <file>boites/DefinitionBarre.qml</file>
+        <file>boites/Chargements.qml</file>
+        <file>Boite_verif/Barre_Flexion.qml</file>
+        <file>Boite_verif/Cordon_soudure.qml</file>
+        <file>Boite_verif/Vibration_plancher.qml</file>
+        <file>Boite_verif/Entaille.qml</file>
+        <file>Boite_verif/Plat_traction.qml</file>
+        <file>Boite_verif/Verif_plat_flexion.qml</file>
+        <file>Boite_verif/Verif_appuis.qml</file>
+        <file>Boite_verif/Verif_assemblage_tire_fond.qml</file>
+        <file>Boite_verif/Barre_Traction.qml</file>
+        <file>Boite_verif/Barre_Compression.qml</file>
+        <file>boites/BoiteCharges.qml</file>
+        <file>Images/Images_pinces.jpg</file>
+        <file>Images/Image_position_organe.jpg</file>
+        <file>base.db</file>
+        <file>accessoires/Volet_Resultats.qml</file>
+        <file>accessoires/Separateur.qml</file>
+        <file>accessoires/Titre_Verif.qml</file>
+        <file>accessoires/Rendu.qml</file>
+        <file>accessoires/3D/Appuis.qml</file>
+    </qresource>
+</RCC>

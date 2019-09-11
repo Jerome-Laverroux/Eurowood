@@ -18,4 +18,14 @@ Ce logiciel contient:
 
 Utiliser QtCreator pour compiler le projet.
 
+
+L'application est protable sur android
+testé sur :
+Windows
+Ubuntu
+Android
+
 Copier le fichier base.bd dans votre dossier compilé release/debug, désolé , la copie n'est pas encore faite au moment de la compilation
+
+NOTA:
+il y a énormément de travail à effectuer avant d'avoir une application opérationnelle, les bases sont posées,les résultats sont accessibles via les fonctions C++, mais l'intégration reste à faire. 

@@ -1,5 +1,5 @@
 # Eurowood
-QT/QML project
+QT/QML 5.13 project 
 
 calculation of wood structures
 2019 LAVERROUX Jerome, SIMON Antoine

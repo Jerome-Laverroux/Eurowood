@@ -17,4 +17,5 @@ Ce logiciel contient:
 - des petits modules pour la vérification de certains assemblages bois/bois bois/acier
 
 Utiliser QtCreator pour compiler le projet.
-Copier le fichier base.bd dans votre de dossier release, désolé , la copie n'est pas faite au moment de la compilation
+
+Copier le fichier base.bd dans votre dossier compilé release/debug, désolé , la copie n'est pas encore faite au moment de la compilation

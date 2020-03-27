@@ -127,7 +127,11 @@ ScrollView{
 
                 ComboBox {
                     id: combo_acier
+                    property string value: currentText
                     model:formule.getBDD_Noms("Acier","Nuance")
+                    onCountChanged: {currentIndex=0;calc()}
+                    onCurrentTextChanged: calc()
+
                 }
             }
 
@@ -162,15 +166,16 @@ ScrollView{
                 id:champ_fy
                 value_isEditable: false
                 value_nom: "fy ="
-                value: formule.getBDD_Value("Acier","fy","Nuance",combo_acier.currentText)
+                value: formule.getBDD_Value("Acier","fy","Nuance",combo_acier.value)
                 value_unite: "MPa"
+                onValueChanged: calc()
             }
 
             Ligne_Champs{
                 id:champ_fu
                 value_isEditable: false
                 value_nom: "fu ="
-                value: formule.getBDD_Value("Acier","fu","Nuance",combo_acier.currentText)
+                value: formule.getBDD_Value("Acier","fu","Nuance",combo_acier.value)
                 value_unite: "MPa"
             }
 
@@ -178,7 +183,7 @@ ScrollView{
                 id:champ_bw
                 value_isEditable: false
                 value_nom: "bw ="
-                value: formule.getBDD_Value("Acier","bw","Nuance",combo_acier.currentText)
+                value: formule.getBDD_Value("Acier","bw","Nuance",combo_acier.value)
                 value_unite: "MPa"
             }
         }

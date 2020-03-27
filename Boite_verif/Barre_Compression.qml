@@ -37,11 +37,10 @@ Item{
                     columns: cfg.isAndro()? 1: 2
                     flow: GridLayout.TopToBottom
 
-                    Titre_Verif{txt:"Barre en compression"}
+                    Style_h1{text:"Barre en compression"}
 
                     Caracteristiques{
                         id:carac
-                        Layout.preferredHeight: 250
                         Layout.fillWidth: true
                     }
 
@@ -72,42 +71,6 @@ Item{
                     }
                 }
             }
-           /* ScrollView{
-                id:scroll3
-                contentWidth: -1
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                clip: true
-                ScrollBar.horizontal.policy:ScrollBar.AlwaysOff
-
-                GridLayout{
-                    id:gridbox3
-                    anchors.fill: parent
-                    columns: cfg.isAndro()? 1: 2
-                    flow: GridLayout.TopToBottom
-
-                    Canvas{
-                        id:rendu
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        onPaint: {
-                            var echelle=1/10;
-                            var ctx= rendu.getContext("2d");
-                            var largeur=rendu.width;
-                            var hauteur=rendu.height;
-                            var marge=(largeur - (lBarre*echelle))/2;
-                            ctx.strokeStyle = Qt.rgba(0, 0, 0, 1);
-                            ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(marge,hauteur/2);
-                            ctx.lineTo(marge+(lBarre*echelle),hauteur/2);
-                            ctx.stroke();
-                        }
-                    }
-
-                }
-            }*/
 
         }
         PageIndicator {
@@ -118,7 +81,7 @@ Item{
                anchors.bottom: parent.bottom
                anchors.horizontalCenter: parent.horizontalCenter
         }
-        Volet_Resultats{
+       /* Volet_Resultats{
             id:volet_resultats
             visible: cfg.isAndro()? false : true
             Layout.fillWidth: true
@@ -127,7 +90,7 @@ Item{
                 // Texte de base
                 remplir="<H2 align=\"center\">Vérification d'une barre en flexion</H2><BR> "
             }
-        }
+        }*/
     }
 }
 

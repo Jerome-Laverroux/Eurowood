@@ -14,18 +14,12 @@ ColumnLayout {
     Layout.preferredHeight: 450
         Layout.fillWidth: true
 
-        Text {
+        Style_h1 {
             id:titre_verif_plancher
                 text: qsTr("Vérification de la vibration du plancher")
                 Layout.fillWidth: true
-                Layout.preferredHeight: 40
-                font.bold: true
-                font.underline: true
-                verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: 18
             }
-
 
 
         RowLayout {
@@ -152,9 +146,8 @@ ColumnLayout {
                                 Layout.fillWidth: true
                                 Layout.preferredHeight: 10
                             }
-                                Text{
+                                Style_h3{
                                     text: "Nombre de fréquence de vibration inférieure à 40 Hz :"
-                                    font.underline: true
                                 }
 
                             Ligne_Champs{
@@ -181,10 +174,7 @@ ColumnLayout {
                                 value_unite: ""
                                 value: formule.getPlanchern40(champs_frequence.value,lBarre,champs_b_plancher.value,champs_EIl.value,champs_EIb.value).toFixed(2)
                             }
-                                Text{
-                                    text: "Vibration impulsionnelle du plancher :"
-                                    font.underline: true
-                                }
+                                Style_h3{text: "Vibration impulsionnelle du plancher :"}
 
                             Ligne_Champs{
                                 id:champs_vitesseb

@@ -85,14 +85,14 @@ Item{
 
                    Style_h1{
                        Layout.fillWidth: true
-                       Layout.columnSpan: gridbox1.columns
+                       Layout.columnSpan:gridbox1.columns>-1?gridbox1.columns:1
                        horizontalAlignment: Text.AlignHCenter
                        text: "Barre en flexion"
                    }
 
                    CheckBox{
                        id:chckAppuis
-                       Layout.columnSpan: gridbox1.columns
+                       Layout.columnSpan: gridbox1.columns>-1?gridbox1.columns:1
                        text: "Vérification des appuis"
                        checked: false
                    }
@@ -100,11 +100,13 @@ Item{
                    Caracteristiques{
                         id:carac
                         Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignTop
                     }
 
                     DefinitionBarre{
                         id:def_barre
                         Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignTop
                         bBarre: "100"
                         hBarre: "220"
                         flexion:true
@@ -114,7 +116,7 @@ Item{
                     }
                     RowLayout{
                         Layout.fillWidth: true
-                        Layout.columnSpan: gridbox1.columns
+                        Layout.columnSpan: gridbox1.columns>-1?gridbox1.columns:1
                         Button{
                             text: "Créer le modèle"
                             onClicked: {creerModele();}

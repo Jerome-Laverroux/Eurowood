@@ -15,7 +15,14 @@ RowLayout{
     property bool value_isEditable: true
     property bool value_isBold: false
     property string value_mask: "9999"
-    property string value_color : palette.text
+    property string value_color : palette.base
+   Rectangle{id:fond;color:value_color;visible: false}
+    onValue_colorChanged:{
+        fond.visible=true
+       input_value.background=fond
+       if(value_color != palette.base){input_value.color= palette.text}
+    }
+
     property int value_decimales: 2
     property real value_valmax: 9999
     property string last:value
@@ -32,9 +39,9 @@ RowLayout{
     }
     TextField{
         id:input_value
-        text: value
-        color: value_color
+        text: value      
         enabled: value_isEditable
+        font.bold: value_isBold
         Layout.preferredWidth: 70
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter

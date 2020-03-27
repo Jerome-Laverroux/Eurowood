@@ -85,7 +85,7 @@ GroupBox{
 
         Ligne_Champs{
             id:uniforme
-            value_largeur: 250
+            //value_largeur: 250
             visible: chefgroupe.checked? true :false
             value_nom: "Charges uniformes réparties"
             value: ""

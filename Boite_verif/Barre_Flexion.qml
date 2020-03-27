@@ -16,6 +16,12 @@ import "../accessoires"
 Item{
     id:chef
     anchors.fill: parent
+
+    onWidthChanged:{
+        if(width > 550){
+            gridbox1.columns=2}
+        else{gridbox1.columns=1}
+    }
     property string lBarre:"4500"
     property bool modelecree: false
     property int nbreapp:2
@@ -75,27 +81,40 @@ Item{
                 GridLayout{
                     id:gridbox1
                     anchors.fill: parent
-                    columns: cfg.isAndro()? 1: 2
-                    flow: GridLayout.TopToBottom
 
-                    Titre_Verif{txt:"Barre en flexion"}
+
+                   Style_h1{
+                       Layout.fillWidth: true
+                       Layout.columnSpan: gridbox1.columns
+                       horizontalAlignment: Text.AlignHCenter
+                       text: "Barre en flexion"
+                   }
+
+                   CheckBox{
+                       id:chckAppuis
+                       Layout.columnSpan: gridbox1.columns
+                       text: "Vérification des appuis"
+                       checked: false
+                   }
 
                    Caracteristiques{
                         id:carac
-                        Layout.preferredHeight: 250
                         Layout.fillWidth: true
                     }
 
                     DefinitionBarre{
                         id:def_barre
+                        Layout.fillWidth: true
                         bBarre: "100"
                         hBarre: "220"
                         flexion:true
+
                         onNbreappuisChanged: chef.nbreapp=def_barre.nbreappuis
                         onValues_changedChanged: if(values_changed){ modelecree=false;}
                     }
                     RowLayout{
                         Layout.fillWidth: true
+                        Layout.columnSpan: gridbox1.columns
                         Button{
                             text: "Créer le modèle"
                             onClicked: {creerModele();}
@@ -106,6 +125,33 @@ Item{
                             color: modelecree ?"green" :"red"
                         }
 
+                    }
+
+    /////////VERIFICATION APPUIS
+
+                    Verif_appuis{
+                        id:boite_verif_appuis
+                        visible: chckAppuis.checked
+                        bBarre:def_barre.bBarre
+                        hBarre:def_barre.hBarre
+                        materiau:carac.materiau
+                        classe_Bois:carac.classe_bois
+                        kmod:carac.kmod
+                        gamma_M:carac.gammaM
+                    }
+
+    ////VERIFICATION ENTAILLE
+
+                    Entaille{
+                        id:boite_entaille
+                        visible: chckAppuis.checked
+                       // Layout.topMargin: 3
+                        hBarre: def_barre.hBarre
+                        bBarre: def_barre.bBarre
+                        materiau: carac.materiau
+                        classe_bois:carac.classe_bois
+                        kmod: carac.kmod
+                        gamma_m: carac.gammaM
                     }
 
 
@@ -365,7 +411,7 @@ Item{
             }
 
 
-            ScrollView{
+         /*   ScrollView{
                 id:scroll4
                 contentWidth: -1
                 Layout.fillWidth: true
@@ -373,11 +419,8 @@ Item{
                 clip: true
                 ScrollBar.horizontal.policy:ScrollBar.AlwaysOff
 
-                GridLayout{
-                    id:gridbox4
+                ColumnLayout{
                     anchors.fill: parent
-                    columns: cfg.isAndro()? 1: 2
-                    flow: GridLayout.TopToBottom
 
     /////////VERIFICATION APPUIS
 
@@ -395,6 +438,7 @@ Item{
 
                     Entaille{
                         id:boite_entaille
+                        Layout.topMargin: 3
                         hBarre: def_barre.hBarre
                         bBarre: def_barre.bBarre
                         materiau: carac.materiau
@@ -402,11 +446,8 @@ Item{
                         kmod: carac.kmod
                         gamma_m: carac.gammaM
                     }
-
-
-
                 }
-            }
+            }*/
 
         ScrollView{
             id:scroll5
@@ -435,7 +476,7 @@ Item{
                anchors.bottom: parent.bottom
                anchors.horizontalCenter: parent.horizontalCenter
         }
-        Volet_Resultats{
+      /*  Volet_Resultats{
             id:volet_resultats
             visible: cfg.isAndro()? false : true
             Layout.fillWidth: true
@@ -444,6 +485,6 @@ Item{
                 // Texte de base
                 remplir="<H2 align=\"center\">Vérification d'une barre en flexion</H2><BR> "
             }
-        }
+        }*/
     }
 }

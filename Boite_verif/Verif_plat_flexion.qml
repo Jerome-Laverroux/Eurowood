@@ -119,7 +119,7 @@ Item {
                                 value_nom: cfg.isAndro()?"Nbre perçages(suivant h)":"Nombre de perçage (sens de la hauteur) :"
                                 value_unite: ""
                                 value: "3"
-                                value_largeur: box_verif_percage.largeur
+                                //value_largeur: box_verif_percage.largeur
 
                             }
 
@@ -128,7 +128,7 @@ Item {
                                 value_nom:cfg.isAndro()?"Diam perçages :": "Diamètre de perçage :"
                                 value_unite: "mm"
                                 value: "14"
-                                value_largeur: box_verif_percage.largeur
+                              //  value_largeur: box_verif_percage.largeur
 
                             }
 
@@ -137,7 +137,7 @@ Item {
                                 value_nom: "η ="
                                 value_unite: "%"
                                 value_isEditable : false
-                                value_largeur: box_verif_percage.largeur
+                               // value_largeur: box_verif_percage.largeur
                                 value: formule.getVerifPercagePlatFlexion(champs_epaisseur.value,champs_hauteur.value,champs_nbr_percage.value,champs_diam.value,champs_fu.value,champs_fy.value,champs_gammaM0.value,champs_gammaM2.value).toFixed(2)
                                 onValue_todoubleChanged: {
                                     if (champs_verif_percage.value_todouble<=100.0){

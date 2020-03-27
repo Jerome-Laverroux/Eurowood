@@ -7,6 +7,8 @@
 #include <QQmlEngine>
 #include <QQmlContext>
 #include <QResource>
+#include <QQuickView>
+#include <QQuickStyle>
 
 #include "modele.h"
 #include "libeurocod2.h"
@@ -19,6 +21,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
     QLocale loc(QLocale::French);
+    QQuickStyle::setStyle("System");
+    QIcon::setThemeName("System");
 
 #ifdef Q_OS_ANDROID
     QStringList permissions;

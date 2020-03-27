@@ -136,14 +136,14 @@ Item {
                         value_nom: "A1 ="
                         value_unite: "mm"
                         value: "200"
-                        value_largeur: box_chemin_rupture.largeur
+                        //value_largeur: box_chemin_rupture.largeur
                     }
                     Ligne_Champs{
                         id:champs_a2
                         value_nom: "A2 ="
                         value_unite: "mm"
                         value: "200"
-                        value_largeur: box_chemin_rupture.largeur
+                      //  value_largeur: box_chemin_rupture.largeur
                     }
 
                     Ligne_Champs{
@@ -151,7 +151,7 @@ Item {
                         value_nom: "Anet = min (A1,A2) ="
                         value_unite: "mm"
                         value: Math.min(champs_a1.value,champs_a2.value)
-                        value_largeur: box_chemin_rupture.largeur
+                       // value_largeur: box_chemin_rupture.largeur
                     }
 
                     Text {
@@ -198,7 +198,7 @@ Item {
                         value_nom: "γM0 ="
                         value_unite: ""
                         value_isEditable: false
-                        value_largeur: box_carac_acier.largeur
+                      //  value_largeur: box_carac_acier.largeur
                     }
 
                     Ligne_Champs{
@@ -208,7 +208,7 @@ Item {
                         value: "1.25"
                         value_decimales: 2
                         value_isEditable: false
-                        value_largeur: box_carac_acier.largeur
+                       // value_largeur: box_carac_acier.largeur
 
                     }
 
@@ -229,7 +229,7 @@ Item {
                         value_unite: "MPa"
                         value_isEditable: false
                         value:formule.getBDD_Value("Acier","fy","Nuance",combo_acier.currentText)
-                        value_largeur: box_carac_acier.largeur
+                      //  value_largeur: box_carac_acier.largeur
 
                     }
 
@@ -239,7 +239,7 @@ Item {
                         value_unite: "MPa"
                         value_isEditable: false
                         value:formule.getBDD_Value("Acier","fu","Nuance",combo_acier.currentText)
-                        value_largeur: box_carac_acier.largeur
+                      //  value_largeur: box_carac_acier.largeur
 
                     }
 
@@ -249,7 +249,7 @@ Item {
                         value_unite: ""
                         value_isEditable: false
                         value:formule.getBDD_Value("Acier","bw","Nuance",combo_acier.currentText)
-                        value_largeur: box_carac_acier.largeur
+                      //  value_largeur: box_carac_acier.largeur
 
                     }
 
@@ -265,7 +265,7 @@ Item {
                         value_nom: "Résistance plaque :"
                         value_unite: "kN"
                         value_isEditable: false
-                        value_largeur: box_carac_acier.largeur
+                      //  value_largeur: box_carac_acier.largeur
                         value: (Math.pow(10,-3)*formule.getResistancePlatTraction(champs_epaisseur.value,champs_hauteur.value,champs_anet.value,champs_fu.value,champs_fy.value,champs_gammaM0.value,champs_gammaM2.value)).toFixed(2)
 
                     }

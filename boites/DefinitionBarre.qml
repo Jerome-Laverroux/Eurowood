@@ -3,13 +3,14 @@ import QtQuick.Window 2.12
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 import "../accessoires"
-//import "../"
 
 
 
 GroupBox{
     id:box_def
-    title: "Définition de la barre"
+    SystemPalette{id:palette;colorGroup: SystemPalette.Active}
+    label: Style_h2{text:"Définition de la barre"}
+
     property bool flexion: false
     property string hBarre//:champ_hauteur.value
     property string bBarre//:champ_largeur.value
@@ -100,12 +101,16 @@ GroupBox{
             id:row_nbre_appuis
             visible: box_def.flexion? true :false
             Layout.fillWidth: true
-            Text{text:"Nombre d'appuis"}
+            Style_txt{text:"Nombre d'appuis"}
             ComboBox{
                 id:combo_nbre_app
-                Component.onCompleted: nbreappuis=model[currentIndex]
+                Component.onCompleted:{
+                    nbreappuis=model[currentIndex]
+                    currentIndex=find(nbreappuis)
+                }
+
                 model:["2","3","4"]
-                currentIndex: 2
+                //currentIndex: 2
                 onCurrentIndexChanged: {
                     box_def.values_changed=true;
                     nbreappuis=model[currentIndex]

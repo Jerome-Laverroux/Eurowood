@@ -6,26 +6,23 @@ import "../accessoires"
 
 
 GroupBox{
-    Reglage_defaut{
-        id:reglages
-    }
+    SystemPalette{id:palette;colorGroup: SystemPalette.Active}
 
-  title: "Caractéristiques"
-  font.bold: true
-  property double gammaM: txt_gamma_M.text
-  property double kmod: txt_kmod.text
-  property string materiau: combo_materiau.currentText
-  property string classe_bois:combo_classe_bois.currentText
-  property string classe_service: combo_classe_service.currentText
-  property string classe_duree: combo_classe_duree.currentText
-  property string ndc:""
-  onGammaMChanged: calc()
-  onKmodChanged: calc()
-  onMateriauChanged: calc()
-  onClasse_boisChanged: calc()
-  onClasse_dureeChanged: calc()
-  onClasse_serviceChanged: calc()
+    label: Style_h2{text:"Caractéristiques"}
 
+    property double gammaM: txt_gamma_M.value
+    property double kmod: txt_kmod.value
+    property string materiau: combo_materiau.currentText
+    property string classe_bois:combo_classe_bois.currentText
+    property string classe_service: combo_classe_service.currentText
+    property string classe_duree: combo_classe_duree.currentText
+    property string ndc:""
+    onGammaMChanged: calc()
+    onKmodChanged: calc()
+    onMateriauChanged: calc()
+    onClasse_boisChanged: calc()
+    onClasse_dureeChanged: calc()
+    onClasse_serviceChanged: calc()
 
 
   function calc(){
@@ -35,8 +32,8 @@ GroupBox{
       materiau=combo_materiau.currentText
       kmod=formule.getkmod(classe_service,classe_duree);
       gammaM=formule.getgammaM(materiau);
-      txt_gamma_M.text=gammaM;
-      txt_kmod.text=kmod;
+      txt_gamma_M.value=gammaM;
+      txt_kmod.value=kmod;
 
       // Sortie sur note de calculs
 
@@ -56,11 +53,9 @@ GroupBox{
 //Matériau
       RowLayout{
           Layout.fillWidth: true
-          Layout.preferredHeight: reglages.defaut_hauteur_champs
-          Text {
-             text:"Matériau"
-          }
+          Style_txt {text:"Matériau"}
           Item{Layout.fillWidth: true}
+
           ComboBox{
               id:combo_materiau
               spacing: 10.00
@@ -79,10 +74,7 @@ GroupBox{
                    combo_classe_bois.model=formule.getBDD_Noms("caracBois","Classe","LVL")
                    break;
                }
-
                calc();
-
-
            }
 
           }
@@ -90,10 +82,7 @@ GroupBox{
 //classe de bois
       RowLayout{
           Layout.fillWidth: true
-          Layout.preferredHeight: reglages.defaut_hauteur_champs
-          Text {
-             text:"Classe de bois"
-          }
+          Style_txt {text:"Classe de bois"}
           Item{Layout.fillWidth: true}
 
           ComboBox{
@@ -105,10 +94,7 @@ GroupBox{
 //classe de service
       RowLayout{
           Layout.fillWidth: true
-          Layout.preferredHeight: reglages.defaut_hauteur_champs
-          Text {
-             text:"Classe de service"
-          }
+          Style_txt {text:"Classe de service"}
           Item{Layout.fillWidth: true}
           ComboBox{
               id:combo_classe_service
@@ -120,11 +106,9 @@ GroupBox{
 //classe de durée
       RowLayout{
           Layout.fillWidth: true
-          Layout.preferredHeight: reglages.defaut_hauteur_champs
-          Text {
-             text:"Classe de durée"
-          }
+          Style_txt {text:"Classe de durée"}
           Item{Layout.fillWidth: true}
+
           ComboBox{
               Layout.fillWidth: true
               id:combo_classe_duree
@@ -132,33 +116,17 @@ GroupBox{
               onCurrentTextChanged: calc();
           }
       }
-//kmod
-      RowLayout{
-          Layout.fillWidth: true
-          Layout.preferredHeight: reglages.defaut_hauteur_champs
-          Text {
-             text:"kmod"
 
-          }
-          Item{Layout.fillWidth: true}
-          Text{
-              id:txt_kmod
-              horizontalAlignment: Qt.AlignHCenter
-          }
+      Ligne_Champs{
+          id:txt_kmod
+          value_nom: "kmod"
+          value_isEditable: false
       }
-//gamma_m
-      RowLayout{
-          Layout.fillWidth: true
-          Layout.preferredHeight: reglages.defaut_hauteur_champs
-          Text {
-             text:"gamma M"
 
-          }
-          Item{Layout.fillWidth: true}
-          Text{
-              id:txt_gamma_M
-              horizontalAlignment: Qt.AlignHCenter
-          }
+      Ligne_Champs{
+          id:txt_gamma_M
+          value_nom: "gamma M"
+          value_isEditable: false
       }
 
   }

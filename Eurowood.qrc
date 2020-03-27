@@ -40,5 +40,9 @@
         <file>accessoires/Titre_Verif.qml</file>
         <file>accessoires/Rendu.qml</file>
         <file>accessoires/3D/Appuis.qml</file>
+        <file>accessoires/Style_h1.qml</file>
+        <file>accessoires/Style_h2.qml</file>
+        <file>accessoires/Style_h3.qml</file>
+        <file>accessoires/Style_txt.qml</file>
     </qresource>
 </RCC>

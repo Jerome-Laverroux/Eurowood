@@ -451,7 +451,7 @@ Item {
                                 rows: 3
                                 Ligne_Champs{
                                     id:champ_a1
-                                    value_largeur: grid_pinces.largeur
+                                    //value_largeur: grid_pinces.largeur
                                     value_nom: "a1 ="
                                     value_unite: "mm"
                                     value_isEditable: false
@@ -473,7 +473,7 @@ Item {
 
                                 Ligne_Champs{
                                     id:champ_a2
-                                    value_largeur: grid_pinces.largeur
+                                   // value_largeur: grid_pinces.largeur
                                     value_nom: "a2 ="
                                     value_unite: "mm"
                                     value_isEditable: false
@@ -489,7 +489,7 @@ Item {
                                 Ligne_Champs{
                                     id:champ_a3c
                                     property double d3 : champ_position.value
-                                    value_largeur: grid_pinces.largeur
+                                  //  value_largeur: grid_pinces.largeur
                                     value_nom: "a3c ="
                                     value_unite: "mm"
                                     value_isEditable: false
@@ -503,7 +503,7 @@ Item {
                                 }
                                 Ligne_Champs{
                                     id:champ_a4c
-                                    value_largeur: grid_pinces.largeur
+                                  //  value_largeur: grid_pinces.largeur
                                     property double d4 : (champ_hp.value_todouble-(champ_nbr_ligne.value_todouble-1)*champ_distance_vertical.value_todouble)/2
                                     value_nom: "a4c ="
                                     value_unite: "mm"
@@ -519,7 +519,7 @@ Item {
 
                                 Ligne_Champs{
                                     id:champ_a3t
-                                    value_largeur: grid_pinces.largeur
+                                  //  value_largeur: grid_pinces.largeur
                                     property double d3 : champ_position.value
                                     value_nom: "a3t ="
                                     value_unite: "mm"
@@ -535,7 +535,7 @@ Item {
 
                                 Ligne_Champs{
                                     id:champ_a4t
-                                    value_largeur: grid_pinces.largeur
+                                 //   value_largeur: grid_pinces.largeur
                                     property double d4 : (champ_hp.value_todouble-(champ_nbr_ligne.value_todouble-1)*champ_distance_vertical.value_todouble)/2
                                     value_nom: "a4t ="
                                     value_unite: "mm"
@@ -749,7 +749,7 @@ Item {
                             Ligne_Champs{
                                 id:champ_nbr_eff
                                 property double n: champ_nbr_colonne.value*champ_nbr_ligne.value;
-                                value_largeur: box_resistance_fil_organes_cisaillement.largeur
+                             //   value_largeur: box_resistance_fil_organes_cisaillement.largeur
                                 value_nom:"Nombre effectifs d'organes :"
                                 value_unite:""
                                 value_isEditable: false
@@ -758,7 +758,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_FveffRk
-                                value_largeur: box_resistance_fil_organes_cisaillement.largeur
+                             //   value_largeur: box_resistance_fil_organes_cisaillement.largeur
                                 value_nom:"Résitance caractéristique \neffective des files de broches \nau cisaillement FeffRk :"
                                 value_unite:"N"
                                 value_isEditable: false
@@ -767,7 +767,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_FveffRd
-                                value_largeur: box_resistance_fil_organes_cisaillement.largeur
+                              //  value_largeur: box_resistance_fil_organes_cisaillement.largeur
                                 value_nom:"Résitance de calcul \neffective des files de broches \nau cisaillement FeffRd :"
                                 value_unite:"N"
                                 value_isEditable: false
@@ -776,7 +776,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_taux_files_organes
-                                value_largeur: box_resistance_fil_organes_cisaillement.largeur
+                              //  value_largeur: box_resistance_fil_organes_cisaillement.largeur
                                 value_nom: "Taux de travail η :"
                                 value_isEditable: false
                                 value_isBold: true
@@ -799,7 +799,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_he1
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                              //  value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Distance entre la rive chargée \net l'organe le plus éloigné :"
                                 value_unite: "mm"
                                 value_isEditable: false
@@ -808,14 +808,14 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_kcr1
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                              //  value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Coefficient de fissuration kcr"
                                 value: "0.67"
                             }
 
                             Ligne_Champs{
                                 id:champ_F90Rk1
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                             //   value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"F90Rk :"
                                 value_unite: "kN"
                                 value_isEditable: false
@@ -825,7 +825,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_F90Rd1
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                             //   value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Résistance au fendage F90Rd :"
                                 value_unite: "kN"
                                 value_isEditable: false
@@ -834,7 +834,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_contrainte_cisaillement_1
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                              //  value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Contrainte de cisaillement :"
                                 value_unite: "MPa"
                                 value_isEditable: false
@@ -843,7 +843,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_resistance_cisaillement_1
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                              //  value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Résistance au cisaillement FvRd :"
                                 value_unite: "MPa"
                                 value_isEditable: false
@@ -854,7 +854,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_taux_fendage_piece1
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                              //  value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom: "Taux de travail η :"
                                 value_isEditable: false
                                 value_isBold: true
@@ -914,7 +914,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_he2
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                               // value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Distance entre la rive chargée \net l'organe le plus éloigné :"
                                 value_unite: "mm"
                                 value_isEditable: false
@@ -923,14 +923,14 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_kcr2
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                              //  value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Coefficient de fissuration kcr"
                                 value: "0.67"
                             }
 
                             Ligne_Champs{
                                 id:champ_F90Rk2
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                            //   value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"F90Rk :"
                                 value_unite: "kN"
                                 value_isEditable: false
@@ -939,7 +939,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_F90Rd2
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                              //  value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Résistance au fendage F90Rd :"
                                 value_unite: "kN"
                                 value_isEditable: false
@@ -948,7 +948,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_contrainte_cisaillement_2
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                             //   value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Contrainte de cisaillement :"
                                 value_unite: "MPa"
                                 value_isEditable: false
@@ -957,7 +957,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_resistance_cisaillement_2
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                             //   value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom:"Résistance au cisaillement FvRd :"
                                 value_unite: "MPa"
                                 value_isEditable: false
@@ -968,7 +968,7 @@ Item {
 
                             Ligne_Champs{
                                 id:champ_taux_fendage_piece2
-                                value_largeur: box_resistance_fendage_piece1.largeur
+                              //  value_largeur: box_resistance_fendage_piece1.largeur
                                 value_nom: "Taux de travail η :"
                                 value_isEditable: false
                                 value_isBold: true

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT += core gui widgets sql qml quick 3dinput
+QT += core gui widgets sql qml quick 3dinput quickcontrols2
 contains(ANDROID_TARGET_ARCH,arm64-v8a){QT += androidextras}
 
 

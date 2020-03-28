@@ -14,7 +14,12 @@ Item {
     property int l_champs: 50
     property double pk:Math.sqrt(formule.getMasseVolCarac(carac1.classe_bois)*formule.getMasseVolCarac(carac2.classe_bois))
 
-    Reglage_defaut {id : reglages}
+    onWidthChanged:{
+        if(width > 550){
+            gridbox.columns=2}
+        else{gridbox.columns=1}
+    }
+   // Reglage_defaut {id : reglages}
 
     function calc(){
         carac2.classe_bois=combo_classe_bois.currentText
@@ -77,16 +82,16 @@ Item {
 
 
 
-    RowLayout{
-        id:principal
-        anchors.fill: parent
-        anchors.margins: 10
+//    RowLayout{
+//        id:principal
+//        anchors.fill: parent
+//        anchors.margins: 10
 
         SwipeView{
             id:swipe_saisies
             clip: true
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            anchors.fill: parent
+
 
             ScrollView{
                 id:scroll1
@@ -97,21 +102,24 @@ Item {
                 ScrollBar.horizontal.policy:ScrollBar.AlwaysOff
 
                 GridLayout{
-                    id:gridbox1
+                    id:gridbox
                     anchors.fill: parent
-                    columns: cfg.isAndro()? 1: 2
-                    flow: GridLayout.TopToBottom
 
-                    Titre_Verif{txt:"Assemblages par tire-fond vis"}
+                    Style_h1{
+                        text:"Assemblages par tire-fond vis"
+                        horizontalAlignment: Text.AlignHCenter
+                        Layout.fillWidth: true
+                        Layout.columnSpan:gridbox.columns>-1?gridbox.columns:1
+                    }
 
                     GroupBox{
                         id:box_piece1
-                        title:"Pièce 1"
+                        label: Style_h2{text:"Pièce 1"}
                         Layout.fillWidth: true
-                        font.bold:true
 
                         ColumnLayout{
                             anchors.fill:parent
+
                             Ligne_Champs{
                                 id:champ_ha
                                 value_nom: "Hauteur :"
@@ -128,7 +136,7 @@ Item {
 
                             Caracteristiques{
                                 id:carac1
-                                Layout.preferredHeight: 250
+                              //  Layout.preferredHeight: 250
                                 Layout.fillWidth: true
 
                             }
@@ -178,7 +186,7 @@ Item {
                                     //Matériau
                                     RowLayout{
                                         Layout.fillWidth: true
-                                        Layout.preferredHeight: reglages.defaut_hauteur_champs
+                                    //    Layout.preferredHeight: reglages.defaut_hauteur_champs
                                         Text {text:"Matériau"}
                                         Item{Layout.fillWidth: true}
                                         ComboBox{
@@ -206,7 +214,7 @@ Item {
                                     //classe de bois
                                     RowLayout{
                                         Layout.fillWidth: true
-                                        Layout.preferredHeight: reglages.defaut_hauteur_champs
+                                       // Layout.preferredHeight: reglages.defaut_hauteur_champs
                                         Text {
                                             text:"Classe de bois"
                                         }
@@ -222,7 +230,7 @@ Item {
                                     //gamma_m
                                     RowLayout{
                                         Layout.fillWidth: true
-                                        Layout.preferredHeight: reglages.defaut_hauteur_champs
+                                      //  Layout.preferredHeight: reglages.defaut_hauteur_champs
                                         Text {
                                             text:"gamma M"
                                         }
@@ -703,10 +711,9 @@ Item {
                                         value:((formule.getFvrk_B_Simple_Cisaillement(champ_fh1k.value,champ_fh2k.value,champ_t1.value,champ_t2.value,champ_d.value,champ_myrk.value,Organe.Tirefond,champ_FaxRk.value,true))/1000).toFixed(2)
                                     }
 
-                                    Item{
-                                        Layout.preferredHeight: reglages.defaut_hauteur_champs
-                                    }
-
+                                   /* Item{
+                                     //   Layout.preferredHeight: reglages.defaut_hauteur_champs
+                                    }*/
                                     Ligne_Champs{
                                         id:champ_FvRd
                                         value_nom: "Résistance de calcul \ncisaillement organe FvRd :"
@@ -991,7 +998,7 @@ Item {
                anchors.horizontalCenter: parent.horizontalCenter
         }
 
-        Volet_Resultats{
+      /*  Volet_Resultats{
             id:volet_resultats
             visible: cfg.isAndro()? false : true
             Layout.fillWidth: true
@@ -1000,8 +1007,8 @@ Item {
                 // Texte de base
                 remplir="<H2 align=\"center\">Assemblage par tirefonds ou vis</H2><BR> "
             }
-        }
-    }
+        }*/
+   // }
 
 
 }

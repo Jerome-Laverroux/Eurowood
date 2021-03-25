@@ -1,3 +1,6 @@
+Si t'aime bien, paye moi un café :) ===>
+https://www.buymeacoffee.com/eromel63
+
 # Eurowood
 QT/QML 5.13 project 
 
